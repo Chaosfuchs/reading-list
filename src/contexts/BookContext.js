@@ -10,7 +10,7 @@ const BookContextProvider = props => {
     { title: 'Die Känguru Chroniken', author: 'Mark Uwe Klink', id: 3 },
   ]);
 
-  const addBook = ([title, author]) => {
+  const addBook = (title, author) => {
     setBooks([...books, { title, author, id: uuidv1() }]);
   };
 

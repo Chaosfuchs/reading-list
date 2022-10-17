@@ -7,6 +7,7 @@ const BookContextProvider = props => {
   const [books, setBooks] = useState([
     { title: 'Schatten der Nacht', author: 'Josef Zong', id: 1 },
     { title: 'Tod im Wattenmeer', author: 'Wilhelm Dos', id: 2 },
+    { title: 'Die Känguru Chroniken', author: 'Mark Uwe Klink', id: 3 },
   ]);
 
   const addBook = ([title, author]) => {

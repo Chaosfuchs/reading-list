@@ -1,18 +1,16 @@
-import React, { Component, createContext } from 'react';
+import React, { createContext, useReducer } from 'react';
+import { themeReducer } from '../reducers/themeReducer';
 
 export const ThemeContext = createContext();
 
-class ThemeContextProvider extends Component {
-  state = {
-    isLightTheme: true,
-    light: { syntax: '#555', ui: '#ddd', bg: '#eee' },
-    dark: { syntax: '#ddd', ui: '#333', bg: '#555' },
-  };
-  render() {
-    return (
-      <ThemeContext.Provider value={{ ...this.state }}>
-        {this.props.children}
-      </ThemeContext.Provider>
-    );
-  }
-}
+const ThemeContextProvider = props => {
+  const initialState = { darkMode: false };
+  const [state, dispatch] = useReducer(themeReducer, initialState);
+  return (
+    <ThemeContext.Provider value={{ state, dispatch }}>
+      {props.children}
+    </ThemeContext.Provider>
+  );
+};
+
+export default ThemeContextProvider;

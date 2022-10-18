@@ -29,6 +29,11 @@ body {
 .book-list {
   margin: 20px;
 }
+.book-list p {
+  text-align: center;
+  font-size: 70%;
+  font-style: italic;
+}
 .book-list ul {
   padding: 0;
   list-style-type: none;

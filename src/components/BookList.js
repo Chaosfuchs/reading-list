@@ -11,6 +11,7 @@ const BookList = () => {
           return <BookDetails book={book} key={book.id} />;
         })}
       </ul>
+      <p>**Click on a Book, to delete it from your list.**</p>
     </div>
   ) : (
     <div className="empty">No books to read. Hello free time :) </div>
